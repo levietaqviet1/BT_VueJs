@@ -1,4 +1,7 @@
-## Công cụ code
+# :notebook_with_decorative_cover: Table of Contents
+- [Cài đặt môi trường](#Cài-đặt-môi-trường)
+
+## Cài đặt môi trường
 
 - `visual studio code`
 
@@ -14,7 +17,7 @@
 `node -v` nếu có nó sẽ hiện phiên bản nếu không sẽ báo ko có
 `npm` nếu có nó sẽ hiện thông tin còn không thì ngược lại 
 
-Ảnh minh họa khi đã cài:
+Ảnh minh họa khi đã cài thành công:
 
 ![image](https://user-images.githubusercontent.com/85175337/216075580-efdc506a-38db-4215-8a66-0ef2408dfa04.png)
 
