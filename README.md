@@ -7,6 +7,15 @@
 
 ![image](https://user-images.githubusercontent.com/85175337/216076021-f15ecc9d-75a3-4b02-a00e-e8b6b7f40102.png)
 
+Trong visual studio code viết tắt VS code vào Extensions cài Live Server
+
+Ảnh cần cài trong VS code:
+
+![image](https://user-images.githubusercontent.com/85175337/216078156-d3644ef7-3e66-45ca-827f-81a27046cb4d.png)
+
+Sau khi cài xong chuột phải vào trong html sẽ hiện Open with Live Server bấm vào để thấy phép màu:
+
+![image](https://user-images.githubusercontent.com/85175337/216078758-a96b531e-ca85-4aab-9b76-49d92113a09c.png)
 
 - `nodejs`
 
