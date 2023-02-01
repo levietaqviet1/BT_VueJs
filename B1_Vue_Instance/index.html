@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VueJS</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <header>Header</header>
+  <div class="list-blog">
+    <p>Vue does not support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8.
+      However it supports all ECMAScript 5 compliant browsers.</p>
+  </div>
+  <div id="app">
+    <p></p>
+  </div>
+  <footer>Footer</footer>
+</body>
+<script>
+  var vueInstance = new Vue({
+    el: '#app'
+  });
+  console.log(vueInstance);
+</script>
+
+</html>
