@@ -18,4 +18,12 @@
 
 ![image](https://user-images.githubusercontent.com/85175337/216075580-efdc506a-38db-4215-8a66-0ef2408dfa04.png)
 
+- Git 
+
+![image](https://user-images.githubusercontent.com/85175337/216076428-e83490f6-39ab-458d-bbc1-383c77160a46.png)
+
++ Kiểm tra đã cài đặt hay chưa thì chuột phải chắc chắn nhất là chuột phải ở trong thư mục máy xem hiện giống ảnh ko:
+
+![image](https://user-images.githubusercontent.com/85175337/216076563-01b45f66-a80d-4066-8818-d35579f6e54d.png)
+
  
