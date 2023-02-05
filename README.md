@@ -215,6 +215,7 @@ B6 Ràng buộc dữ liệu 2 chiều
         }
     }); 
 </script>
+```
 
 B7 Ràng buộc Class bằng VueJs
 
