@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-on:submit.prevent nằm trong Event Handling của Vue.js 
+        Chức năng nó xử lý giống e.preventDefault()
+        v-on:mousemove.stop giống e.stopPropagation();
+        -->
+        <form action="./serve" v-on:submit.prevent="handleSubmitForm">
+            <label for="fN">Input First Name</label>
+            <input id="fN" type="text" name="fName"><br><br>
+            <label for="email">Input Email</label>
+            <input id="email" type="text" name="email"><br><br>
+            <input type="submit" value="Dang nhap">
+        </form>
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            title: '2. chay thu'
+        },
+        methods: {
+            say: function (text) {
+                return 'Hello' + text;
+            }
+            , handleSubmitForm(e) {
+                console.log(e);
+                // e.preventDefault() // dùng để ngăn ko cho chuyển trang ( chuyến action hay là server) 
+                // e.stopPropagation(); // dùng để chỉ chạy ko liên quan đến thẻ cha
+            }
+        }
+    });
+    // hệ thống phản ứng. Reactivity
+    console.log(vueInstance);
+
+    setTimeout(() => {
+        vueInstance.title = " 2. chay thu 1.2";
+    }, 2000)
+</script>
+
+</html>

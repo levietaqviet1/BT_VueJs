@@ -77,6 +77,9 @@ Kết hợp với Html cao hơn:
         <p>{{testHTML}} </p><!-- ko dc -->
         <p>{{checkDieuKien?'dc':'ko'}}</p><!-- dùng so sánh kiểu này đc-->
         <p>{{formatPrice()}}</p>
+	<h1>{{count}}</h1>
+        <button v-on:click="handleClick">click1</button> <!-- dùng v-on: kết hợp với event  -->
+        <button v-on:click="count += 2">click2</button> <!-- có thể trực tiếp viết vào -->
     </div>
 
 </body>
@@ -100,12 +103,55 @@ Kết hợp với Html cao hơn:
             , testHTML: '<h1>ok</h1>'
             , checkDieuKien: false
             , price: 10000
+            , count: 0
+
         },
         methods: {
             formatPrice() {
                 return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(this.price)
             }
+            , handleClick() {
+                this.count++;
+            }
         }
     });
 </script>
+```
+
+Kết hợp với Html với login basic:
+
+```html 
+<body>
+    <div id="app">
+        <!-- v-on:submit.prevent nằm trong Event Handling của Vue.js 
+        Chức năng nó xử lý giống e.preventDefault()
+        v-on:mousemove.stop giống e.stopPropagation();
+        -->
+        <form action="./serve" v-on:submit.prevent="handleSubmitForm"> 
+            <label for="fN">Input First Name</label>
+            <input id="fN" type="text" name="fName"><br><br>
+            <label for="email">Input Email</label>
+            <input id="email" type="text" name="email"><br><br>
+            <input type="submit" value="Dang nhap">
+        </form>
+    </div>
+</body>
+```
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            title: '2. chay thu'
+        },
+        methods: {
+            handleSubmitForm(e) {
+                console.log(e);
+                // e.preventDefault() // dùng để ngăn ko cho chuyển trang ( chuyến action hay là server) 
+                // e.stopPropagation(); // dùng để chỉ chạy ko liên quan đến thẻ cha
+            }
+        }
+    }); 
+</script>
+```vue
+
 ```
