@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <title>Vue</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="demo" v-for="(abc,index) in listAccount" v-bind:key="index">
+            Id: {{abc.Id}} <br>
+            Name: {{abc.Names}} 
+        </div><br>
+        <div class="demo" v-for="(value,key) in scores" v-bind:key="key">
+            {{key}}: {{value}} <br> 
+        </div>
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            scores:{
+                name: 'Viet',
+                mat: 10
+            },
+            listAccount: [
+                {
+                    "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "Names": "string",
+                    "User": "string",
+                    "Password": "string"
+                },
+                {
+                    "Id": "587038e0-5036-4fb9-901c-b1269a5847f0",
+                    "Names": "long",
+                    "User": "longntt",
+                    "Password": "234"
+                },
+                {
+                    "Id": "151cf168-9097-4a89-b41b-e8bbe7bfeefa",
+                    "Names": "viet",
+                    "User": "vietld",
+                    "Password": "123"
+                }
+            ]
+        }
+    }); 
+</script>
+
+</html>

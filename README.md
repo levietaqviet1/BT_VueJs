@@ -316,3 +316,52 @@ B9 Dùng Biểu Thức Điều Kiện
     }); 
 </script>
 ```
+
+B10 Dùng Vòng Lặp Trong VueJs
+
+Bổ sung: Sử dụng key để xác định phần tử nào đã thay đổi và cần phải cập nhật giao diện tương ứng
+
+```html
+<body>
+    <div id="app">
+        <div class="demo" v-for="(abc,index) in listAccount" v-bind:key="index">
+            Id: {{abc.Id}} <br>
+            Name: {{abc.Names}} 
+        </div><br>
+        <div class="demo" v-for="(value,key) in scores" v-bind:key="key">
+            {{key}}: {{value}} <br> 
+        </div>
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            scores:{
+                name: 'Viet',
+                mat: 10
+            },
+            listAccount: [
+                {
+                    "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "Names": "string",
+                    "User": "string",
+                    "Password": "string"
+                },
+                {
+                    "Id": "587038e0-5036-4fb9-901c-b1269a5847f0",
+                    "Names": "long",
+                    "User": "longntt",
+                    "Password": "234"
+                },
+                {
+                    "Id": "151cf168-9097-4a89-b41b-e8bbe7bfeefa",
+                    "Names": "viet",
+                    "User": "vietld",
+                    "Password": "123"
+                }
+            ]
+        }
+    }); 
+</script>
+```
