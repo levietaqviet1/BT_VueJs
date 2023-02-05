@@ -5,22 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
-    <title>Vue</title>
 </head>
 
 <body>
     <div id="app">
-        
+        <div class="demo" v-for="(abc, index) in arrUser" v-if="abc.isActive">
+            {{abc.email}}
+        </div><br>
+        <div class="demo" v-for="(abc, index) in userActive">
+            {{abc.email}}
+        </div>
     </div>
 </body>
 <script>
     var vueInstance = new Vue({
         el: '#app',
         data: {
-           
+            arrUser: [
+                { email: 'test1@gmail.com', isActive: true },
+                { email: 'test2@gmail.com', isActive: true },
+                { email: 'test3@gmail.com', isActive: false },
+                { email: 'test4@gmail.com', isActive: true },
+            ]
         }
-    }); 
+        , computed: {
+            userActive() {
+                return this.arrUser.filter(function (u) { // filter theo điều kiện
+                    return u.isActive
+                })
+            }
+        }
+    });  
 </script>
 
 </html>

@@ -365,3 +365,44 @@ Bổ sung: Sử dụng key để xác định phần tử nào đã thay đổi 
     }); 
 </script>
 ```
+
+B11 Lưu ý về Loop và Condition trong VueJs
+
+```html
+<body>
+    <div id="app">
+        <div class="demo" v-for="(abc, index) in arrUser" v-if="abc.isActive">
+            {{abc.email}}
+        </div><br>
+        <div class="demo" v-for="(abc, index) in userActive">
+            {{abc.email}}
+        </div>
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            arrUser: [
+                { email: 'test1@gmail.com', isActive: true },
+                { email: 'test2@gmail.com', isActive: true },
+                { email: 'test3@gmail.com', isActive: false },
+                { email: 'test4@gmail.com', isActive: true },
+            ]
+        }
+        , computed: {
+            userActive() {
+                return this.arrUser.filter(function (u) { // filter theo điều kiện
+                    return u.isActive
+                })
+            }
+        }
+    });  
+</script>
+```
+
+B12 Lưu ý quan trọng về Array và Object
+
+```html
+
+```
