@@ -186,6 +186,7 @@ Sự khác biệt giữa Computed và Methods:
   }); 
 </script>
 ```
+
 B6 Ràng buộc dữ liệu 2 chiều
 
 ```html 
@@ -215,4 +216,37 @@ B6 Ràng buộc dữ liệu 2 chiều
     }); 
 </script>
 
+B7 Ràng buộc Class bằng VueJs
+
++ Sử dụng v-bind để ràng buộc class
+
+```html 
+<body>
+    <!-- Có thể xem thêm cứ pháp Object Syntax -->
+    <!-- https://vuejs.org/guide/essentials/class-and-style.html#binding-html-classes  -->
+    <div id="app">
+        <div v-bind:class="'demo_' + textClass"> </div>
+        <div class="demo2" v-bind:class="objClass"></div>
+        
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            textClass: 'active',
+            isActive: true,
+            isError: false
+        },
+        computed: {
+            objClass() {
+                return {
+                    active: this.isActive,
+                    error: this.isError
+                }
+            }
+        }
+    }); 
+</script>
 ```
+![image](https://user-images.githubusercontent.com/85175337/216807497-23e5dc5d-17ba-4e33-95e1-db8ea3fd610b.png)

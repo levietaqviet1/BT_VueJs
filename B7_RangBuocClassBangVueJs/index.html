@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <title>Vue</title>
+</head>
+
+<body>
+    <!-- Có thể xem thêm cứ pháp Object Syntax -->
+    <!-- https://vuejs.org/guide/essentials/class-and-style.html#binding-html-classes  -->
+    <div id="app">
+        <div v-bind:class="'demo_' + textClass"> </div>
+        <div class="demo2" v-bind:class="objClass"></div>
+        
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            textClass: 'active',
+            isActive: true,
+            isError: false
+        },
+        computed: {
+            objClass() {
+                return {
+                    active: this.isActive,
+                    error: this.isError
+                }
+            }
+        }
+    }); 
+</script>
+
+</html>
