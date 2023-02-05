@@ -67,3 +67,45 @@ scrip để chạy đc
   },2000)
 </script>
 ```
+
+Kết hợp với Html cao hơn:
+
+```html
+<body>
+    <div id="app">
+        {{title}} <a v-bind:href="URL" v-bind:target="tar">{{hien}}</a>
+        <p>{{testHTML}} </p><!-- ko dc -->
+        <p>{{checkDieuKien?'dc':'ko'}}</p><!-- dùng so sánh kiểu này đc-->
+        <p>{{formatPrice()}}</p>
+    </div>
+
+</body>
+```
+
+```vue
+<script>
+    // intl.numberformat
+    const number = 123456.789; 
+    console.log(new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(number));
+    // Expected output: "123.456,79 €"
+
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            title: 'Link nè: '
+            // đối với url,tar để sử dụng đc thì cần thêm v-bind: ở htlm và ko cần {{}}
+            , URL: 'https://www.youtube.com/watch?v=AHPkqa5ZaN0&list=PLv6GftO355AtDjStqeyXvhA1oRLuhvJWf&index=6'
+            , tar: '_blank'
+            , hien: 'nhấn'
+            , testHTML: '<h1>ok</h1>'
+            , checkDieuKien: false
+            , price: 10000
+        },
+        methods: {
+            formatPrice() {
+                return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(this.price)
+            }
+        }
+    });
+</script>
+```
