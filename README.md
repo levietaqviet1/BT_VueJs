@@ -155,3 +155,35 @@ Kết hợp với Html với login basic:
     }); 
 </script>
 ```
+
+Sự khác biệt giữa Computed và Methods:
+
++ Computed  tuy khai báo giống như 1 hàm tuy nhiên nó sẽ được lưu vào trong đối tượng Vue 
+
++ Hàm trong Computed chỉ được thực thi khi mà có bất kỳ dữ liệu nào trong hàm có sự thay đổi 
+
++ Trong Methods thì chạy hết dễ gây lãng phí nếu có nhiều hàm nên tránh viết tính toán dữ liệu data 
+
+
+```html 
+<body>
+    <div id="app">
+        <p>{{messs}}</p>
+        <p>{{reversedMessage}}</p>
+    </div>
+</body>
+<script>
+  var vueInstance = new Vue({
+    el: '#app',
+    data: {
+       messs: 'hello'
+    },
+    computed: {
+        reversedMessage(){
+            return this.messs.split('').reverse().join('')
+        }
+    }
+  }); 
+</script>
+```
+
