@@ -287,3 +287,32 @@ B8 Ràng Buộc Style cho phần tử
     }); 
 </script>
 ```
+
+B9 Dùng Biểu Thức Điều Kiện
+
+```html
+<body>
+    <div id="app">
+        <!-- Có 1 kiểu khác là v-show nó khác v-if ở chỗ là nó chỉ 
+        Thêm display: none cho thuộc tính  -->
+        <ul>
+            <li v-on:click="tabSelected = 'login'"><button>Dang nhap</button> </li>
+            <li v-on:click="tabSelected = 'logout'"><button>Dang ky</button></li>
+        </ul>
+        <div class="login" v-if="tabSelected==='login'">
+            <h2>Sign in</h2>
+        </div>
+        <div class="logout" v-else>
+            <h2>log out</h2>
+        </div>
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            tabSelected: 'login'
+        }
+    }); 
+</script>
+```
