@@ -38,4 +38,32 @@ Sau khi cài xong chuột phải vào trong html sẽ hiện Open with Live Serv
 
 ![image](https://user-images.githubusercontent.com/85175337/216076563-01b45f66-a80d-4066-8818-d35579f6e54d.png)
 
- 
+ ## Basic Vue in scrip
+
+scrip để chạy đc
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+```
+
+```vue
+<script>
+  var vueInstance = new Vue({
+    el: '#app',
+    data: {
+      title: '2. chay thu'
+    },
+    methods: {
+      say: function(text){
+        return 'Hello' + text;
+      }
+    }
+  });
+  // hệ thống phản ứng. Reactivity
+  console.log(vueInstance);
+
+  setTimeout(()=> {
+    vueInstance.title = " 2. chay thu 1.2";
+  },2000)
+</script>
+```

@@ -12,19 +12,35 @@
 <body>
   <header>Header</header>
   <div class="list-blog">
-    <p>Vue does not support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8.
+    <p>1. Cài Đặt VueJs
       However it supports all ECMAScript 5 compliant browsers.</p>
+      
   </div>
   <div id="app">
-    <p></p>
+    <p>{{title}}</p> <!-- Lấy từ data -->
+    <p>{{say(' 3. su dung ham')}}</p> <!-- Lấy từ data -->
+    <!-- Template Syntax -->
   </div>
   <footer>Footer</footer>
 </body>
 <script>
   var vueInstance = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+      title: '2. chay thu'
+    },
+    methods: {
+      say: function(text){
+        return 'Hello' + text;
+      }
+    }
   });
+  // hệ thống phản ứng. Reactivity
   console.log(vueInstance);
+
+  setTimeout(()=> {
+    vueInstance.title = " 2. chay thu 1.2";
+  },2000)
 </script>
 
 </html>
