@@ -169,7 +169,7 @@ Sự khác biệt giữa Computed và Methods:
 <body>
     <div id="app">
         <p>{{messs}}</p>
-        <p>{{reversedMessage}}</p>
+        <p>{{reversedMessage}}</p>  <!-- Khi gọi tới thì ko cần () :)  -->
     </div>
 </body>
 <script>
