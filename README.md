@@ -251,3 +251,39 @@ B7 Ràng buộc Class bằng VueJs
 </script>
 ```
 ![image](https://user-images.githubusercontent.com/85175337/216807497-23e5dc5d-17ba-4e33-95e1-db8ea3fd610b.png)
+
+B8 Ràng Buộc Style cho phần tử
+
+```html
+<body> 
+    <div id="app">
+        <!-- Lưu ý: 
+        Trong javascrip với css font-size trong js chuyển thành fontSize  
+        Viết hoa chữ cái đầu sau dấu gạch và xóa khoảng trắng cách-->
+        <div class="demo" v-bind:style="objectStyle">
+            <div class="demoB8" v-bind:style="{color: activeColor, fontSize: fontSize+'px'}" >VueJs</div>
+        </div> 
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            activeColor: 'red',
+            fontSize: '30',
+            backGroup: 'https://i.pinimg.com/280x280_RS/72/64/0f/72640fdec1bc3437e801808e225bc8c4.jpg'
+        },
+        computed: {
+          background(){
+            return 'url('+this.backGroup+')';
+          },
+          objectStyle(){
+            return 
+            {
+                backgroundImage: this.background // gọi lại có thể dùng dễ hơn
+            }
+          }
+        }
+    }); 
+</script>
+```

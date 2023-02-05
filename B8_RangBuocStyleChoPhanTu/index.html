@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <title>Vue</title>
+</head>
+
+<body> 
+    <div id="app">
+        <!-- Lưu ý: 
+        Trong javascrip với css font-size trong js chuyển thành fontSize  
+        Viết hoa chữ cái đầu sau dấu gạch và xóa khoảng trắng cách-->
+        <div class="demo" v-bind:style="objectStyle">
+            <div class="demoB8" v-bind:style="{color: activeColor, fontSize: fontSize+'px'}" >VueJs</div>
+        </div> 
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            activeColor: 'red',
+            fontSize: '30',
+            backGroup: 'https://i.pinimg.com/280x280_RS/72/64/0f/72640fdec1bc3437e801808e225bc8c4.jpg'
+        },
+        computed: {
+          background(){
+            return 'url('+this.backGroup+')';
+          },
+          objectStyle(){
+            return 
+            {
+                backgroundImage: this.background // gọi lại có thể dùng dễ hơn
+            }
+          }
+        }
+    }); 
+</script>
+
+</html>
