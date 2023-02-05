@@ -137,6 +137,8 @@ Kết hợp với Html với login basic:
     </div>
 </body>
 ```
+
+```vue
 <script>
     var vueInstance = new Vue({
         el: '#app',
@@ -152,6 +154,4 @@ Kết hợp với Html với login basic:
         }
     }); 
 </script>
-```vue
-
 ```
