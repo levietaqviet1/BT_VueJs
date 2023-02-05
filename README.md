@@ -186,4 +186,33 @@ Sự khác biệt giữa Computed và Methods:
   }); 
 </script>
 ```
+B6 Ràng buộc dữ liệu 2 chiều
 
+```html 
+<body>
+    <!-- v model -->
+    <div id="app">
+        <p>{{fName}}</p>
+        <!-- Khi load len thi input co value = fName 
+            và khi value input thay đổi thẻ <p>{{fName}}</p> cũng đổi theo
+             => Ràng buộc dữ liệu 2 chiều -->
+        <input v-model="fName" type="text" placeholder="Nhap first name"> 
+        <!-- <input v-on:keyup="handleKeyUp" type="text" placeholder="Nhap first name"> -->
+    </div>
+</body>
+<script>
+    var vueInstance = new Vue({
+        el: '#app',
+        data: {
+            fName: 'hello'
+        },
+        methods: {
+            // handleKeyUp(e) {
+            //     //console.log(e.target.value);
+            //     this.fName = e.target.value;
+            // }
+        }
+    }); 
+</script>
+
+```
